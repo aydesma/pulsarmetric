@@ -24,7 +24,7 @@ function App() {
             <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-sky-50 relative overflow-hidden">
                 {/* Redesigned Star/Sparkle Decoration - Vibrant & Floating */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    {[...Array(15)].map((_, i) => (
+                    {[...Array(25)].map((_, i) => (
                         <motion.div
                             key={i}
                             className="absolute"
@@ -54,21 +54,18 @@ function App() {
                     ))}
                 </div>
 
-                {/* EKG-inspired decorative lines - More prominent and adjusted position */}
-                <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-20">
-                    <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-                        {/* Top EKG wave */}
+                {/* EKG-inspired decorative lines - Top */}
+                <div className="absolute top-0 left-0 w-full h-[50%] pointer-events-none opacity-20">
+                    <svg className="w-full h-full" preserveAspectRatio="none" viewBox="0 0 1440 300" xmlns="http://www.w3.org/2000/svg">
                         <motion.path
-                            d="M 0 300 L 200 300 L 230 200 L 260 400 L 290 300 L 500 300 L 530 250 L 560 350 L 590 300 L 1200 300"
+                            d="M 0 150 L 300 150 L 330 50 L 360 250 L 390 150 L 600 150 L 630 100 L 660 200 L 690 150 L 900 150 L 930 50 L 960 250 L 990 150 L 1440 150"
                             stroke="#3B82F6"
-                            strokeWidth="2.5"
+                            strokeWidth="2"
                             fill="none"
                             initial={{ pathLength: 0 }}
                             animate={{ pathLength: 1 }}
                             transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                         />
-
-
                     </svg>
                 </div>
 
@@ -152,6 +149,16 @@ function App() {
                                 </span>
                             </button>
                         </motion.div>
+
+                        {/* Decorative Line below logos - Width approx 1.4x of a typical header */}
+                        <div className="mt-12 w-full flex justify-center">
+                            <motion.div
+                                className="h-1 bg-gradient-to-r from-transparent via-slate-300 to-transparent w-[140%]"
+                                initial={{ scaleX: 0, opacity: 0 }}
+                                animate={{ scaleX: 1, opacity: 1 }}
+                                transition={{ duration: 1, delay: 0.8 }}
+                            />
+                        </div>
                     </motion.div>
                 </div>
 
